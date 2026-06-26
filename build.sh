@@ -45,6 +45,12 @@ PLIST
 echo "→ ad-hoc 코드사인"
 codesign --force --sign - "$APP" >/dev/null 2>&1 || echo "  (코드사인 건너뜀)"
 
+echo "→ zip 패키징 (릴리스 배포용)"
+ZIP="build/${APP_NAME}.zip"
+rm -f "$ZIP"
+ditto -c -k --keepParent "$APP" "$ZIP"
+
 echo "✅ 빌드 완료: $APP"
 echo "   실행:  open \"$APP\""
 echo "   설치:  cp -R \"$APP\" /Applications/"
+echo "   배포:  $ZIP"
