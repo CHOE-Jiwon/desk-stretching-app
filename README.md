@@ -5,6 +5,10 @@
 
 > Apple Silicon(arm64) 전용. macOS 13 이상.
 
+<p align="center">
+  <img src="assets/screenshot.png" width="320" alt="데스크 스트레칭 오버레이">
+</p>
+
 ## 특징
 - 메뉴바 상주 + 움직이는 아이콘 (RunCat식)
 - 출근 / 점심 / 퇴근 시간 설정, 그 시간대 안에서만 알림 (주말 제외 가능)
