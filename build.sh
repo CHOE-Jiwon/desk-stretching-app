@@ -19,6 +19,9 @@ swiftc \
   -o "$MACOS/${APP_NAME}" \
   Sources/*.swift
 
+echo "→ 일러스트 복사"
+cp Resources/illustrations/*.png "$RES/"
+
 echo "→ Info.plist 생성"
 cat > "$APP/Contents/Info.plist" <<PLIST
 <?xml version="1.0" encoding="UTF-8"?>

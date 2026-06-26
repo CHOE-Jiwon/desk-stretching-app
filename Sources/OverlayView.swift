@@ -1,18 +1,23 @@
 import SwiftUI
-import WebKit
 
-/// 인라인 SVG/CSS 애니메이션을 투명 배경으로 렌더.
-struct StretchWebView: NSViewRepresentable {
-    let html: String
+/// 번들 Resources의 일러스트 PNG를 표시. 비율이 제각각이라 scaledToFit로 안 깨지게.
+struct StretchIllustration: View {
+    let image: String
 
-    func makeNSView(context: Context) -> WKWebView {
-        let wv = WKWebView(frame: .zero, configuration: WKWebViewConfiguration())
-        wv.setValue(false, forKey: "drawsBackground") // 투명 배경
-        wv.loadHTMLString(html, baseURL: nil)
-        return wv
+    var body: some View {
+        Group {
+            if let url = Bundle.main.url(forResource: image, withExtension: "png"),
+               let nsImage = NSImage(contentsOf: url) {
+                Image(nsImage: nsImage)
+                    .resizable()
+                    .scaledToFit()
+            } else {
+                Image(systemName: "figure.flexibility")
+                    .font(.system(size: 64))
+                    .foregroundStyle(.secondary)
+            }
+        }
     }
-
-    func updateNSView(_ nsView: WKWebView, context: Context) {}
 }
 
 /// 화면 중앙에 뜨는 스트레칭 안내 카드.
@@ -39,7 +44,7 @@ struct OverlayView: View {
                 .font(.system(size: 15, weight: .semibold))
                 .foregroundStyle(.secondary)
 
-            StretchWebView(html: stretchAnimationHTML(stretch.kind))
+            StretchIllustration(image: stretch.image)
                 .frame(width: 300, height: 240)
 
             Text(stretch.name)
