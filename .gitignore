@@ -7,3 +7,6 @@ build/
 # Swift
 .build/
 *.swiftmodule
+
+# 라이선스 일러스트 (IconScout) — repo 비포함, 로컬에서만 빌드에 사용
+Resources/illustrations/
