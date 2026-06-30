@@ -20,7 +20,12 @@ swiftc \
   Sources/*.swift
 
 echo "→ 일러스트 복사"
-cp Resources/illustrations/*.png "$RES/"
+if compgen -G "Resources/illustrations/*.png" > /dev/null; then
+  cp Resources/illustrations/*.png "$RES/"
+else
+  echo "  ⚠️  Resources/illustrations/*.png 없음 — 일러스트 없이 빌드합니다."
+  echo "     (라이선스 일러스트는 repo에 미포함. README의 '일러스트 준비' 참고)"
+fi
 
 echo "→ Info.plist 생성"
 cat > "$APP/Contents/Info.plist" <<PLIST

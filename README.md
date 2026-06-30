@@ -43,6 +43,15 @@ open build/DeskStretch.app
 ```
 로컬에서 직접 빌드한 앱은 격리 딱지가 안 붙어 `xattr` 단계가 필요 없다.
 
+> **일러스트 준비** — 동작별 일러스트(PNG)는 라이선스 자산이라 **이 저장소에 포함되지 않는다.**
+> 빌드 전에 `Resources/illustrations/` 폴더를 만들고, 아래 파일명으로 PNG를 넣어야 한다
+> (없어도 빌드는 되지만 일러스트 자리에 기본 아이콘이 표시된다):
+> ```
+> neckTurn  armOverhead  shoulderCross  chestOpen  neckTilt
+> shoulderShrug  neckRoll  armCross  squat   (.png)
+> ```
+> 파일명은 `Sources/Stretch.swift` 의 `StretchKind` 값과 일치해야 한다.
+
 <details>
 <summary><b>빌드가 modulemap / SDK 에러로 실패한다면</b></summary>
 
@@ -70,7 +79,7 @@ sudo xcode-select --install
 
 ## 구조
 - `Sources/` — Swift 소스 (AppKit + SwiftUI)
-- `Resources/illustrations/` — 동작별 일러스트 PNG (파일명 = `StretchKind` 값)
+- `Resources/illustrations/` — 동작별 일러스트 PNG (파일명 = `StretchKind` 값, **repo 미포함**)
 - `build.sh` — `swiftc`로 컴파일 후 `.app` 번들 + 리소스 복사 + Info.plist + ad-hoc 코드사인 + zip 패키징
 - `docs/plan/` — 구현 계획
 
@@ -85,3 +94,7 @@ gh release create v1.0 build/DeskStretch.zip --title "v1.0" --notes "..."
 ```bash
 rm ~/Library/LaunchAgents/com.jiwon.deskstretch.plist
 ```
+
+## 크레딧
+- 일러스트: **Anna Syvak** via [IconScout](https://iconscout.com) (Digital License)
+  - 라이선스 특성상 원본 일러스트 파일은 이 저장소에 포함하지 않으며, 빌드 시 로컬에서 앱 번들에 포함된다.
