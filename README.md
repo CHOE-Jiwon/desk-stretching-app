@@ -3,7 +3,7 @@
 장시간 착석하는 화이트칼라를 위한 macOS 메뉴바 스트레칭 알리미.
 근무 시간대 안에서 일정 간격마다 화면 정중앙에 스트레칭 안내(일러스트)를 띄운다.
 
-> Apple Silicon(arm64) 전용. macOS 13 이상.
+> ⚠️ **Apple Silicon(M1 이상) 전용 — Intel Mac 미지원.** macOS 13 이상.
 
 <p align="center">
   <img src="assets/screenshot.png" width="320" alt="데스크 스트레칭 오버레이">
@@ -15,6 +15,12 @@
 - 연구 기반 기본 간격 30분 (5~120분 조절)
 - 화면 중앙 오버레이 + 동작별 일러스트, "완료" / "건너뛰기"
 - 로그인 시 자동 실행 토글
+
+## 요구 사항
+- **Apple Silicon (M1 이상) 전용 — Intel Mac 미지원** (arm64 단일 빌드)
+- **macOS 13 이상**
+- 직접 빌드(방법 2) 시에만: Xcode **Command Line Tools** 필요 — `xcode-select --install`
+  (다운로드 설치(방법 1)는 CLT 불필요)
 
 ## 설치
 
