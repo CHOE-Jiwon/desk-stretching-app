@@ -53,8 +53,8 @@ open build/DeskStretch.app
 > 빌드 전에 `Resources/illustrations/` 폴더를 만들고, 아래 파일명으로 PNG를 넣어야 한다
 > (없어도 빌드는 되지만 일러스트 자리에 기본 아이콘이 표시된다):
 > ```
-> neckTurn  armOverhead  shoulderCross  chestOpen  neckTilt
-> shoulderShrug  neckRoll  armCross  squat   (.png)
+> neckTurn  armOverhead  crossBodyShoulder  chestOpen  neckTilt
+> shoulderShrug  neckRoll  wristForearm  anklePumps  squat   (.png)
 > ```
 > 파일명은 `Sources/Stretch.swift` 의 `StretchKind` 값과 일치해야 한다.
 
@@ -104,3 +104,4 @@ rm ~/Library/LaunchAgents/com.jiwon.deskstretch.plist
 ## 크레딧
 - 일러스트: **Anna Syvak** via [IconScout](https://iconscout.com) (Digital License)
   - 라이선스 특성상 원본 일러스트 파일은 이 저장소에 포함하지 않으며, 빌드 시 로컬에서 앱 번들에 포함된다.
+- 일부 일러스트(`anklePumps` = 종아리 스트레칭)는 Google Gemini로 생성한 AI 이미지다.
