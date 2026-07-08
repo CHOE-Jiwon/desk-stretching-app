@@ -2,7 +2,8 @@ import Foundation
 
 enum StretchKind: String, CaseIterable {
     case neckTurn, armOverhead, crossBodyShoulder, chestOpen,
-         neckTilt, shoulderShrug, neckRoll, wristForearm, anklePumps, squat
+         neckTilt, shoulderShrug, neckRoll, wristForearm, anklePumps,
+         calfToeRaise, squat
 }
 
 struct Stretch {
@@ -51,6 +52,10 @@ struct Stretch {
         Stretch(kind: .anklePumps,
                 name: "종아리 스트레칭",
                 instruction: "의자에 앉아 한쪽 다리를 앞으로 뻗고, 발끝을 몸 쪽으로 당겼다 앞으로 미는 동작을 반복하세요. 종아리를 펌핑해 다리 혈액순환을 돕습니다. 양쪽 번갈아.",
+                durationSec: 30),
+        Stretch(kind: .calfToeRaise,
+                name: "발끝·뒤꿈치 들기",
+                instruction: "의자에 앉아 발을 바닥에 두고, 뒤꿈치를 고정한 채 발끝을 위로 들었다가, 이어서 앞꿈치를 누르며 뒤꿈치를 높이 들어 올리세요. 정강이·종아리를 번갈아 자극합니다.",
                 durationSec: 30),
         Stretch(kind: .squat,
                 name: "스쿼트 10개",
